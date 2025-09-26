@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../../store/Context.js";
-import { StoreCard } from "../../component/cards/storeCard.jsx";
+import { StoreCard } from "../../components/cards/storeCard.jsx";
 
 export const Stores = () => {
   const { store, actions } = useContext(Context);

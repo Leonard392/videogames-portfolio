@@ -1,22 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
-import { BackendURL } from "./component/backendURL";
+import ScrollToTop from "./components/scrollToTop.js";
+import { BackendURL } from "./components/backendURL.js";
 
-import { Home } from "./pages/home";
+import { Home } from "./pages/home.js";
 import { Creators } from "./pages/navbar/creators.js";
 import { Platforms } from "./pages/navbar/platforms.js";
 import { Stores } from "./pages/navbar/stores.js";
-import { Login } from "./pages/login";
-import { Signup } from "./pages/signup";
-import { Profile } from "./pages/profile.js";
-import injectContext from "./store/appContext";
-
-//user
-import { Favorites } from "./pages/user/favorites.js";
-import { FavoriteGames } from "./pages/user/favoriteGames.js";
-import { FavoritePlatforms} from "./pages/user/favoritePlatforms.js";
-import { FavoriteCreators} from "./pages/user/favoriteCreators.js";
+import injectContext from "./store/appContex.js";
 
 
 //import genres view
@@ -34,14 +25,14 @@ import { Sports } from "./pages/genres/sports.js";
 import { Strategy } from "./pages/genres/strategy.js";
 
 //import details
-import { GameDetails } from "./component/details/gameDetails.jsx"; 
-import { CreatorDetails } from "./component/details/creatorDetails.jsx";
-import { StoreDetails } from "./component/details/storeDetails.jsx";
-import { PlatformDetails } from "./component/details/platformDetails.jsx";
+import { GameDetails } from "./components/details/gameDetails.jsx"; 
+import { CreatorDetails } from "./components/details/creatorDetails.jsx";
+import { StoreDetails } from "./components/details/storeDetails.jsx";
+import { PlatformDetails } from "./components/details/platformDetails.jsx";
 
 
-import { Navbar } from "./component/navbar.jsx";
-import { Footer } from "./component/footer.jsx";
+import { Navbar } from "./components/navbar.jsx";
+import { Footer } from "./components/footer.jsx";
 
 //create your first component
 const Layout = () => {
@@ -73,13 +64,6 @@ const Layout = () => {
                         <Route element={<Simulation />} path="/genres/simulation" />
                         <Route element={<Sports />} path="/genres/sports" />
                         <Route element={<Strategy />} path="/genres/strategy" />
-                        <Route element={<Login />} path="/login" />
-                        <Route element={<Signup />} path="/signup" />
-                        <Route element={<Favorites />} path="/favorites" />
-                        <Route element={<FavoriteGames />} path="/favorites/games" />
-                        <Route element={<FavoritePlatforms />} path="/favorites/platforms" />
-                        <Route element={<FavoriteCreators />} path="/favorites/creators" />
-                        <Route element={<Profile />} path="/profile" />
                         <Route element={<GameDetails />} path="/gameDetails/:id" />
                         <Route element={<CreatorDetails />} path="/creatorDetails/:id" />
                         <Route element={<StoreDetails />} path="/storeDetails/:id" />

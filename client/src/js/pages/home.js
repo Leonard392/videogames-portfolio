@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { TopGames } from "../component/topGames.jsx";
-import { Features } from "../component/features.jsx";
-import logo3 from "../../img/logo.webp";
+import { TopGames } from "../components/topGames.jsx";
+import { Features } from "../components/features.jsx";
+import logo from "../../img/logo.webp";
 import "../../styles/home.css";
 
 export const Home = () => {
@@ -20,7 +20,7 @@ export const Home = () => {
 					</Link>
 				</div>
 				<div className="right">
-					<img  className="logo-img" src={logo3}/>
+					<img  className="logo-img" src={logo}/>
 				</div>
 			</div>
 			<TopGames/>

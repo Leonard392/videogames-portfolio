@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useCallback, useRef } from "react";
 import { Context } from "../../store/Context.js";
-import { GameCard } from "../../component/cards/gameCard.jsx"
-import { Sidebar } from "../../component/sidebar.jsx";
+import { GameCard } from "../../components/cards/gameCard.jsx"
+import { Sidebar } from "../../components/sidebar.jsx";
 import "../../../styles/genres.css";
 
 export const Puzzle = () => {

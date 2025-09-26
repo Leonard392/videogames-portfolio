@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../../store/Context.js";
-import { Platformcard } from "../../component/cards/platformCard.jsx";
+import { Platformcard } from "../../components/cards/platformCard.jsx";
 
 export const Platforms = () => {
   const { store, actions } = useContext(Context);
