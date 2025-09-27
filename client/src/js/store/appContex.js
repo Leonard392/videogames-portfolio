@@ -31,6 +31,7 @@ const injectContext = PassedComponent => {
 			state.actions.fetchTopCreators();
 			state.actions.fetchPlatforms();
 			state.actions.fetchStores();
+			console.log("StoreWrapper cargado");
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,

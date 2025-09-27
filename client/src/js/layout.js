@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop.js";
-import { BackendURL } from "./components/backendURL.js";
+import { BackendURL } from "./components/backendURL.js";  // 👈 corregido
 
 import { Home } from "./pages/home.js";
 import { Creators } from "./pages/navbar/creators.js";
@@ -9,10 +9,9 @@ import { Platforms } from "./pages/navbar/platforms.js";
 import { Stores } from "./pages/navbar/stores.js";
 import injectContext from "./store/appContex.js";
 
-
 //import genres view
 import { Action } from "./pages/genres/action.js";
-import { Adventure} from "./pages/genres/adventure.js"
+import { Adventure } from "./pages/genres/adventure.js";
 import { Arcade } from "./pages/genres/arcade.js";
 import { Casual } from "./pages/genres/casual.js";
 import { Fighting } from "./pages/genres/fighting.js";
@@ -25,22 +24,21 @@ import { Sports } from "./pages/genres/sports.js";
 import { Strategy } from "./pages/genres/strategy.js";
 
 //import details
-import { GameDetails } from "./components/details/gameDetails.jsx"; 
+import { GameDetails } from "./components/details/gameDetails.jsx";
 import { CreatorDetails } from "./components/details/creatorDetails.jsx";
 import { StoreDetails } from "./components/details/storeDetails.jsx";
 import { PlatformDetails } from "./components/details/platformDetails.jsx";
 
-
 import { Navbar } from "./components/navbar.jsx";
 import { Footer } from "./components/footer.jsx";
 
-//create your first component
 const Layout = () => {
-    //the basename is used when your project is published in a subdirectory and not in the root of the domain
-    // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
+    // 👇 corrección aquí también
+    if (!process.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL === "") {
+        return <BackendURL />;
+    }
 
     return (
         <div>
