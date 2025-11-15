@@ -1,9 +1,11 @@
-const API_KEY = process.env.REACT_APP_API_KEY;
-
 export const getBestGames2025 = async () => {
-  const res = await fetch(
-    `https://api.rawg.io/api/games?key=${API_KEY}&dates=2025-01-01,2025-12-31&ordering=-rating`
-  );
-  if (!res.ok) throw new Error("Error al obtener juegos");
-  return res.json();
+  const url = "https://www.freetogame.com/api/games";
+
+  const res = await fetch(url);
+  if (!res.ok) throw new Error("Error al cargar juegos");
+
+  const data = await res.json();
+
+  // Aquí solo tomamos 6 juegos como hacías antes
+  return data.slice(0, 6);
 };

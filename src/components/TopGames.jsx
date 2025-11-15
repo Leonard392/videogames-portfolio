@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getBestGames2025 } from "../services/api";
+import { getBestGames2025 } from "../services/api.js";
 import GameCard from "./GameCard";
 
 export const TopGames = () => {
@@ -10,7 +10,7 @@ export const TopGames = () => {
     const fetchGames = async () => {
       try {
         const data = await getBestGames2025();
-        setGames(data.results.slice(0, 6)); // mostrar solo los primeros 6
+        setGames(data);
       } catch (err) {
         setError(err.message);
       }
@@ -23,7 +23,7 @@ export const TopGames = () => {
 
   return (
     <div className="games-2025">
-      <h1>Best 2025 Games</h1>
+      <h1>Best Free Games</h1>
       <div className="games-list">
         {games.map((game) => (
           <GameCard key={game.id} game={game} />
